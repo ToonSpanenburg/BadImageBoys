@@ -7,10 +7,12 @@ import TheWheelPage from "@/components/TheWheel/TheWheelPage.vue";
 import PageNotFound from "@/components/Extras/PageNotFound.vue";
 import TopHeader from "@/components/Shared/TopHeader.vue";
 import Test from "@/components/Test.vue";
+import SecretSatanPage from "@/components/SecretSatan/SecretSatanPage.vue";
 
 const routes = {
   '/': HomePage,
   '/TheWheel': TheWheelPage,
+    '/SecretSatan': SecretSatanPage,
   '/Test': Test
 }
 

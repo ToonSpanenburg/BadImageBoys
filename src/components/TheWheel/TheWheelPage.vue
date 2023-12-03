@@ -37,6 +37,7 @@
     </div>
   </div>
 </div>
+  <Footer/>
 </template>
 
 <script>
@@ -50,6 +51,7 @@ export default {
 <script setup>
 import {ref} from "vue";
 import Title from "@/components/TheWheel/Title.vue";
+import Footer from "@/components/Shared/Footer.vue";
 
 const title = ref('The Wheel!');
 const isBlue = ref(false);
