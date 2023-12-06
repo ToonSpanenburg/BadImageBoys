@@ -1,10 +1,18 @@
 <template>
+  <div class="container">
+    <div class="row">
+
+    </div>
+  </div>
 
 </template>
 
 <script>
+import TestWheel from "@/components/TheWheel/TestWheel.vue";
+
 export default {
-  name: "Home"
+  name: "Home",
+  components: {TestWheel}
 }
 </script>
 

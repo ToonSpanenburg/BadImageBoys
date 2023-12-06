@@ -27,7 +27,7 @@
         <div class="row mt-3">
           <div class="col-6" v-for="optie in opties" :key="optie.id">
             <div class="form-group m-1">
-              <label for="Option{{optie.id}}">Optie {{optie.id}}</label>
+              <label for="Option{{optie.id}}">Optie {{optie.id +1}}</label>
               <input v-model="optie.name" type="text" class="form-control" id="Option{{optie.id}}">
             </div>
           </div>

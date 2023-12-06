@@ -4,10 +4,17 @@
         Secret Satan
     </h1>
     <div class="container">
-        <div class="container row">
-            <button @click="addDeelnemers()" class="btn btn-primary mb-3 float-end">
+        <div class="container row mt-5 mb-5">
+            <div class="col-6">
+              <button class="btn btn-success">
+                Curse the masses!!
+              </button>
+            </div>
+            <div class="col-6">
+              <button @click="addDeelnemers()" class="btn btn-primary">
                 Add Person
-            </button>
+              </button>
+            </div>
         </div>
         <div class="row" v-for="deelnemer in deelnemers" :key="deelnemer.id">
             <div class="form-group row">
@@ -17,16 +24,19 @@
                 </div>
 
                 <div class="col-7">
-                    <label for="InputEmail">Email address</label>
-                    <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="Email{{deelnemer.id}}">Email address</label>
+                    <input v-model="deelnemer.email" type="email" class="form-control" id="Email{{deelnemer.id}}" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
                 <div class="col-1">
                     <label for="Delete">Delfsdfdsf</label>
-                    <button id="Delete" class="btn btn-danger">
+                    <button @click="removeDeelnemers(deelnemer.id)" id="Delete" class="btn btn-danger">
                         X
                     </button>
                 </div>
             </div>
+        </div>
+        <div class="container row">
+
         </div>
     </div>
 </div>
@@ -45,17 +55,27 @@ import Footer from "@/components/Shared/Footer.vue";
 
 let id =0;
 const deelnemers = ref([
-    { id: id++, name: '', email: '' }
+    { id: id++, name: '', email: '' },
+  { id: id++, name: '', email: '' },
+  { id: id++, name: '', email: '' }
 ])
 
 function addDeelnemers()
 {
     deelnemers.value.push({ id: id++, name: '', email: ''})
+    PrintAllDeelnemers();
 }
 
 function removeDeelnemers(id)
 {
-    deelnemers.value.splice(id, 1);
+  console.log(id);
+  deelnemers.value = deelnemers.value.filter(deelnemer => deelnemer.id !== id);
+  //deelnemers.value.splice(id, 1);
+}
+
+function PrintAllDeelnemers()
+{
+  deelnemers.value.forEach((deelnemer) => console.log(deelnemer.name + deelnemer.email));
 }
 
 </script>
