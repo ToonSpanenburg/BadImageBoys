@@ -4,15 +4,13 @@
 
     </div>
   </div>
-
 </template>
 
 <script>
-import TestWheel from "@/components/TheWheel/TestWheel.vue";
+
 
 export default {
-  name: "Home",
-  components: {TestWheel}
+  name: "Home"
 }
 </script>
 

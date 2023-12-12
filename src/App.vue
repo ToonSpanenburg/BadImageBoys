@@ -8,6 +8,7 @@ import PageNotFound from "@/components/Extras/PageNotFound.vue";
 import TopHeader from "@/components/Shared/TopHeader.vue";
 import Test from "@/components/Test.vue";
 import SecretSatanPage from "@/components/SecretSatan/SecretSatanPage.vue";
+import Footer from "@/components/Shared/Footer.vue";
 
 const routes = {
   '/': HomePage,
@@ -35,6 +36,7 @@ const currentView = computed(() => {
   <main>
     <component :is="currentView" />
   </main>
+  <Footer/>
 </template>
 
 <style scoped>
