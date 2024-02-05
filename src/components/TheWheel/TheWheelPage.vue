@@ -1,11 +1,11 @@
 <template>
 <div class="container">
-  <Title id="title" :title="title" :isBlue="isBlue"/>
+  <Title class="text-white" id="title" :title="title" :isBlue="isBlue"/>
   <div class="row">
     <div class="col-6">
       <div class="d-flex align-items-center justify-content-center m-0 p-0">
         <h3>
-          <b>
+          <b class="text-white">
             V
           </b>
         </h3>
