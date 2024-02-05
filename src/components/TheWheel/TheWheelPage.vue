@@ -1,6 +1,10 @@
 <template>
 <div class="container">
-  <Title class="text-white" id="title" :title="title" :isBlue="isBlue"/>
+  <div class="">
+    <h1 class="text-white">
+      The Wheel
+    </h1>
+  </div>
   <div class="row">
     <div class="col-6">
       <div class="d-flex align-items-center justify-content-center m-0 p-0">
