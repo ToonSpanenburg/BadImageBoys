@@ -7,12 +7,11 @@ import TheWheelPage from "@/components/TheWheel/TheWheelPage.vue";
 import PageNotFound from "@/components/Extras/PageNotFound.vue";
 import TopHeader from "@/components/Shared/TopHeader.vue";
 import Test from "@/components/Test.vue";
-import SecretSatanPage from "@/components/SecretSatan/SecretSatanPage.vue";
+import Footer from "@/components/Shared/Footer.vue";
 
 const routes = {
   '/': HomePage,
   '/TheWheel': TheWheelPage,
-    '/SecretSatan': SecretSatanPage,
   '/Test': Test
 }
 
@@ -28,13 +27,16 @@ const currentView = computed(() => {
 </script>
 
 <template>
-  <header>
-    <TopHeader/>
-  </header>
+  <div class="bg-black">
+    <header>
+      <TopHeader/>
+    </header>
 
-  <main>
-    <component :is="currentView" />
-  </main>
+    <main>
+      <component :is="currentView" />
+    </main>
+    <Footer/>
+  </div>
 </template>
 
 <style scoped>
