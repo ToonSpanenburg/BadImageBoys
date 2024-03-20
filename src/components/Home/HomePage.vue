@@ -1,46 +1,53 @@
 <template>
   <div class="container">
+    <search-component/>
     <div class="row">
-      <search-component/>
       <div v-for="article in myArticles" class="col-6 p-3">
-
-        <div class="card">
-          <h2 class="">
-            Test Thing
-          </h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur dicta dignissimos dolorem doloremque dolorum expedita facere iure magni maiores molestias nulla quod saepe sed, similique sunt, velit, voluptate voluptatem?
-          </p>
-        </div>
-
+        <ArticleComponent class="myItem" :article="article"/>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-import {ref} from "vue";
-import SearchComponent from "@/components/Home/SearchComponent.vue";
-
-const testReactiveVar = ref('test');
-
-
-const myArticles = [
-  "The Wheel",
-  "test",
-  "test",
-  "test",
-  "test",
-];
-
-</script>
 
 <script>
+import { ref, onMounted } from 'vue';
+import * as api from "@/components/api";
+import ArticleComponent from "@/components/Home/ArticleComponent.vue";
+
 export default {
-  name: "Home"
-}
+  components: {ArticleComponent},
+  setup() {
+    const myArticles = ref([]);
+
+    onMounted(async () => {
+      try {
+        const articles = await api.getData("");
+        myArticles.value = articles;
+        console.log("these are my articles: "+ myArticles.value);
+
+      } catch (error) {
+        console.error('Error fetching articles:', error);
+      }
+    });
+
+    return {
+      myArticles
+    };
+  }
+};
 </script>
 
 <style scoped>
-
+.myItem
+{
+  transition: all 0.3s ease;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+.myItem:hover
+{
+  border-right-color: yellow;
+  border-bottom-color: yellow;
+}
 </style>

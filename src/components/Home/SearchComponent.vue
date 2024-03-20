@@ -5,7 +5,10 @@
 <template>
 <div class="container row bg-white rounded">
   <div class="col p-3">
-    test
+    <h3 class="text-white">
+      test
+    </h3>
+
   </div>
 </div>
 </template>
