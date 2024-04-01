@@ -7,12 +7,15 @@ import PageNotFound from "@/components/Extras/PageNotFound.vue";
 import TopHeader from "@/components/Shared/TopHeader.vue";
 import Footer from "@/components/Shared/Footer.vue";
 import ExperimentPage from "@/components/Experiment/ExperimentPage.vue";
+import ArticlePage from "@/components/Article/ArticlePage.vue";
 
-const routes = {
-  '/': HomePage,
-  '/TheWheel': TheWheelPage,
-  '/Experiment':ExperimentPage,
-}
+
+const routes = [
+  {path: '/', component: HomePage},
+  {path: '/TheWheel', component: TheWheelPage},
+  {path: '/Experiment', component: ExperimentPage},
+  {path: '/article/:id', component: ArticlePage },
+]
 
 const currentPath = ref(window.location.hash)
 
@@ -21,8 +24,11 @@ window.addEventListener('hashchange', () => {
 })
 
 const currentView = computed(() => {
-  return routes[currentPath.value.slice(1) || '/'] || PageNotFound
+  const path = currentPath.value.slice(1)
+  const route = routes.find(route => route.path === path)
+  return route ? route.component : PageNotFound
 })
+
 </script>
 
 <template>
