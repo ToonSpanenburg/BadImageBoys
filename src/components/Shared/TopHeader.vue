@@ -31,7 +31,9 @@
           </div>
         </div>
       </div>
-      <div class="col">
+
+
+      <div class="row">
         <div class="mt-5 pt-5">
           <div class="p-1">
             <h4>
@@ -55,18 +57,62 @@
               </a>
             </h4>
             <h4>
-              <a href="#/TheWheel" class="p-1 ps-5 pt-5 link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+              <a href="#/Experiment" class="p-1 ps-5 pt-5 link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                 <span class="actualNav" :style="{color: myPurple}">
-                  New Page
+                  Experimental stuff...
                 </span>
                 <span class="actualNavShadow pt-1 ps-1" :style="{color: myPink}">
-                  New Page
+                  Experimental stuff...
                 </span>
               </a>
             </h4>
           </div>
         </div>
       </div>
+
+
+      <!--
+      <div class="row mt-5 pt-5">
+        <div class="col">
+          <h4>
+            <a href="#/" class="p-1 link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <span class="actualNavShadow" :style="{color: myYellow}">
+                  Home
+                </span>
+              <span class="actualNav pt-1 ps-1" :style="{color: myBlue}">
+                  Home
+                </span>
+            </a>
+          </h4>
+        </div>
+
+        <div class="col">
+          <h4>
+            <a href="#/TheWheel" class="p-1 ps-3 pt-3 link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <span class="actualNav" :style="{color: myGreen}">
+                  The Wheel
+                </span>
+              <span class="actualNavShadow pt-1 ps-1" :style="{color: myOrange}">
+                  The Wheel
+                </span>
+            </a>
+          </h4>
+        </div>
+
+        <div class="col">
+          <h4>
+            <a href="#/Experiment" class="p-1 ps-5 pt-5 link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <span class="actualNav" :style="{color: myPurple}">
+                  Experimental stuff...
+                </span>
+              <span class="actualNavShadow pt-1 ps-1" :style="{color: myPink}">
+                  Experimental stuff...
+                </span>
+            </a>
+          </h4>
+        </div>
+      </div>
+      -->
     </div>
 
   </div>
