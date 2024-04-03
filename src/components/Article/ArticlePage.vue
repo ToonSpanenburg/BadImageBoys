@@ -3,20 +3,32 @@
     <h1>
       {{myArticle.title}}
     </h1>
-    <div>
-      <writer-component :writer="myArticle.writer"/>
+
+    <div v-if="myArticle.videoLink">
+      //this is a video
+      {{myArticle}}
     </div>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur, debitis distinctio enim eveniet, explicabo labore, maiores nostrum quam quo sunt tempora vero voluptatem. Dicta distinctio optio quasi sunt tempore.
-    </p>
+    <div v-else>
+      <div class="p-1">
+        <ArticleTypeComponent :article="myArticle"/>
+      </div>
+    </div>
+
+    <div class="bg-white text-black rounded-3 p-1 m-1">
+      <writer-component :writer="myArticle.writer"/>
+      <div>
+        Release date: {{myArticle.releaseDate}}
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script>
-import ArticleComponent from "@/components/Home/ArticleComponent.vue";
 import {onMounted, ref} from "vue";
 import * as api from "@/components/api";
 import WriterComponent from "@/components/Article/WriterComponent.vue";
+import ArticleTypeComponent from "@/components/Article/ArticleTypeComponent.vue";
 
 let routeId = ref();
 const myArticle = ref({});
@@ -26,14 +38,13 @@ export default {
     next();
   },
 
-  components: {WriterComponent, ArticleComponent},
+  components: {ArticleTypeComponent, WriterComponent},
   setup() {
     onMounted(async () => {
       try {
         const article = await api.getData("article/" + routeId);
         myArticle.value = article;
         console.log(myArticle.value);
-        console.log(myArticle.value.writer.username);
       } catch (error) {
         console.error('Error fetching articles:', error);
       }
