@@ -37,7 +37,7 @@
         <div class="mt-5 pt-5">
           <div class="p-1">
             <h4>
-              <a href="#/" class="p-1 link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+              <a href="/" class="p-1 link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                 <span class="actualNavShadow" :style="{color: myYellow}">
                   Home
                 </span>
@@ -47,7 +47,7 @@
               </a>
             </h4>
             <h4>
-              <a href="#/TheWheel" class="p-1 ps-3 pt-3 link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+              <a href="/TheWheel" class="p-1 ps-3 pt-3 link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                 <span class="actualNav" :style="{color: myGreen}">
                   The Wheel
                 </span>
@@ -57,7 +57,7 @@
               </a>
             </h4>
             <h4>
-              <a href="#/Experiment" class="p-1 ps-5 pt-5 link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+              <a href="/Experiment" class="p-1 ps-5 pt-5 link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                 <span class="actualNav" :style="{color: myPurple}">
                   Experimental stuff...
                 </span>

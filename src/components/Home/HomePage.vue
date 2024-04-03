@@ -3,12 +3,13 @@
     <search-component/>
     <div class="row">
       <div v-for="article in myArticles" class="col-6 p-3">
-        <ArticleComponent class="myItem" :article="article"/>
+        <router-link class="routerLink" :to="{ name: 'article', params: { id: article.id }}" tag="div">
+          <ArticleComponent class="myItem" :article="article"/>
+        </router-link>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 import { ref, onMounted } from 'vue';
@@ -39,8 +40,17 @@ export default {
 </script>
 
 <style scoped>
+.routerLink
+{
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
 .myItem
 {
+  color: inherit;
+  text-decoration: none;
+  text-underline: none;
   transition: all 0.3s ease;
   border-right: 5px solid transparent;
   border-bottom: 5px solid transparent;
